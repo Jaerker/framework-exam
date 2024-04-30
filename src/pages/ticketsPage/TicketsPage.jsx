@@ -1,8 +1,10 @@
 const TicketsPage = () => {
+
+
+
     return (
-        <div>
-            ticketsPage
-        </div>
+        <h1 className='page-header'>Biljetter</h1>
+
     );
 };
 

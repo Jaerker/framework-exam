@@ -1,7 +1,8 @@
 
 const DetailsPage = () => {
   return (
-    <div>DetailsPage</div>
+    <h1 className='page-header'>Event</h1>
+
   );
 }
 

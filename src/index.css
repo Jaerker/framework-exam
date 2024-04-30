@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Barcode+128&display=swap');
+
+@font-face {
+    font-family: 'Sansita One';
+    src: url('./fonts/SansitaOne.ttf');
+}
+
+:root {
+    font-size: 16px;
+    --c-purple: #231F42;
+    --c-pink: #F56B9A;
+    --c-blue-green: #37AEAB;
+    --c-linear-gradient: linear-gradient(var(--c-pink) 0%, var(--c-purple) 55%);
+    --c-white: #FFFFFF;
+    --c-white-t8: rgb(255, 255, 255, 0.8);
+    --c-white-t7: rgb(255, 255, 255, 0.7);
+    --c-white-t1: rgb(255, 255, 255, 0.1);
+
+    --f-sansita: 'Sansita One';
+    --f-fira: 'Fira Sans';
+    --f-barcode: 'Libre Barcode 128';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background: var(--c-purple);
+    color: var(--c-white);
+    font-family: var(--f-fira);
+}
+
+.main-content {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Då Headern är med på alla sidor så gör jag en global klass för den texten. */
+.page-header {
+    font-family: var(--f-sansita);
+    font-weight: 100;
+    letter-spacing: .1rem;
+    font-size: 2.4rem;
+    color: var(--c-pink);
+    text-align: center;
+    margin-top: 2rem;
+    user-select: none;
+}

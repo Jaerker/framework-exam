@@ -1,0 +1,44 @@
+.navbar {
+    position: fixed;
+    height: 5rem;
+    width: 100vw;
+    border-top: 3px solid var(--c-pink);
+    bottom: 0;
+}
+
+.navbar__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: start;
+    list-style: none;
+}
+
+.navbar__item--ticket {
+    position: relative;
+    top: -2.5rem;
+    margin: auto;
+    padding-top: .5rem;
+    background: var(--c-purple);
+    border: solid 3px var(--c-pink);
+    width: 25vw;
+    height: 25vw;
+    border-radius: 100%;
+}
+
+.navbar__link {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: .3rem;
+    font-weight: 300;
+    text-decoration: none;
+    color: var(--c-white);
+    padding: .5rem;
+}
+
+.navbar__item--ticket .navbar__link {
+    font-weight: 400;
+}

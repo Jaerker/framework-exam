@@ -1,8 +1,6 @@
 const EventsPage = () => {
     return (
-        <div>
-            EventsPage
-        </div>
+        <h1 className='page-header'>Events</h1>
     );
 };
 

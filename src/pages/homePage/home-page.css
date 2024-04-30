@@ -1,0 +1,14 @@
+.homepage-content {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    height: 100vh;
+}
+
+.sub-header {
+    font-style: italic;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    font-size: 1.5rem;
+}

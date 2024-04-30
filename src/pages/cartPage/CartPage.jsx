@@ -1,8 +1,7 @@
 const CartPage = () => {
     return (
-        <div>
-            CartPage
-        </div>
+        <h1 className='page-header'>Order</h1>
+
     );
 };
 

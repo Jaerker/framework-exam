@@ -1,16 +1,70 @@
 .event-card {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 90px 5fr;
+    gap: .5rem;
+
 }
 
 .event-card__date {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1/1;
+    height: 90px;
+    max-height: 100px;
+    margin: auto;
     border: 1px solid var(--c-white);
-    border-radius: 2px;
+    border-radius: 4px;
     display: grid;
     place-content: center;
     text-align: center;
-    width: 5rem;
+    flex-shrink: 1;
 }
 
-.event-card__information {}
+.event-card__date h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.event-card__date p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.event-card__information {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-left: 1rem;
+    border-bottom: solid 2px var(--c-white-t2);
+}
+
+.event-card__name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px var(--c-pink);
+    padding-bottom: .2rem;
+}
+
+.event-card__location {
+    font-size: .8rem;
+    font-weight: 400;
+    padding-top: .2rem;
+    color: var(--c-white-t7);
+}
+
+.event-card__bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 0;
+}
+
+.event-card__time {
+    font-weight: 500;
+    color: var(--c-white-t7);
+}
+
+.event-card__price {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--c-blue-green);
+}

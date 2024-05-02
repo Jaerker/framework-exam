@@ -1,0 +1,86 @@
+.search-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-bar {
+    background: var(--c-white-t1);
+    border-radius: 3px;
+    display: flex;
+    width: 100%;
+
+}
+
+.search-button {
+    border: none;
+    color: none;
+    background: transparent;
+}
+
+.filter-icon {
+    padding: 0 .5rem;
+    transition: color .2s;
+}
+
+.filter-icon--active {
+    color: var(--c-pink);
+}
+
+.filter-icon--inactive {
+    color: var(--c-white-t2);
+}
+
+.search-field {
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    padding: .5rem;
+    color: var(--c-white);
+    width: 100%;
+}
+
+.filter-search {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: repeat(4, 1.6rem);
+    justify-content: center;
+    overflow: hidden;
+    background: var(--c-white-t1);
+    border-top: solid 2px transparent;
+    transition: all .2s ease-in-out;
+
+
+}
+
+.filter-search--active-with-city,
+.filter-search--active {
+    padding: .5rem 0;
+    border-color: var(--c-white-t2);
+}
+
+.filter-search--inactive {
+    height: 0;
+}
+
+.filter-search--active {
+    height: 10vh;
+}
+
+.filter-search--active-with-city {
+    height: 15vh;
+}
+
+
+.filter-search label {
+    text-align: center;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+input[type='radio'] {
+    max-height: 1rem;
+}

@@ -14,6 +14,7 @@
     --c-white: #FFFFFF;
     --c-white-t8: rgb(255, 255, 255, 0.8);
     --c-white-t7: rgb(255, 255, 255, 0.7);
+    --c-white-t2: rgb(255, 255, 255, 0.2);
     --c-white-t1: rgb(255, 255, 255, 0.1);
 
     --f-sansita: 'Sansita One';
@@ -30,17 +31,19 @@
 #root {
     display: grid;
     place-content: center;
-    height: 100vh;
-    background: var(--c-purple);
     color: var(--c-white);
+    background: var(--c-purple);
     font-family: var(--f-fira);
 }
 
 .main-content {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
     align-items: center;
+    gap: 2.5rem;
+    background: var(--c-purple);
+    padding-bottom: 130px;
 }
 
 /* Då Headern är med på alla sidor så gör jag en global klass för den texten. */

@@ -5,8 +5,6 @@ axios.defaults.baseURL = 'https://app.ticketmaster.com/discovery/v2'
         /events/Z698xZq2Z17_kGt?apikey=b0FzW77q5nOdS9y0SA7d1xnWtcf37Z7F&locale=sv-se' 
 */
 
-
-
 const request = {
     get: (url) => axios.get(`${url}&apikey=b0FzW77q5nOdS9y0SA7d1xnWtcf37Z7F`).then(res => res.data._embedded).catch(err => console.log(err))
 }

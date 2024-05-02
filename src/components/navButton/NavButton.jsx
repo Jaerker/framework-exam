@@ -8,7 +8,6 @@ const NavButton = ({ path, icon, text }) => {
     const location = useLocation();
     useEffect(() => {
         setIsActive(location.pathname === path ? true : false);
-        console.log(location.pathname);
     }, [location]);
 
 

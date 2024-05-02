@@ -6,13 +6,13 @@ import DetailsPage from './pages/detailsPage/DetailsPage';
 import TicketsPage from './pages/ticketsPage/TicketsPage';
 import ErrorPage from './pages/errorPage/ErrorPage.jsx'
 import Navbar from './components/navbar/Navbar.jsx';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 
 const App = () => {
     return (
-        <>
+        <BrowserRouter>
             <article className='main-content'>
                 <Routes>
                     <Route path="/" element={<HomePage />} errorElement={<ErrorPage />} />
@@ -24,7 +24,7 @@ const App = () => {
             </article>
             <Navbar />
 
-        </>);
+        </BrowserRouter>);
 }
 
 export default App;

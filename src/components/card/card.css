@@ -1,0 +1,16 @@
+.event-card {
+    width: 100%;
+    display: flex;
+}
+
+.event-card__date {
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--c-white);
+    border-radius: 2px;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    width: 5rem;
+}
+
+.event-card__information {}

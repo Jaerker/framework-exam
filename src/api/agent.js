@@ -6,7 +6,8 @@ axios.defaults.baseURL = 'https://app.ticketmaster.com/discovery/v2'
 */
 
 const request = {
-    get: (url) => axios.get(`${url}&apikey=b0FzW77q5nOdS9y0SA7d1xnWtcf37Z7F`).then(res => res.data._embedded).catch(err => console.log(err))
+    get: (url) => axios.get(`${url}&apikey=b0FzW77q5nOdS9y0SA7d1xnWtcf37Z7F`).then(res => res.data._embedded).catch(err => console.log(err)),
+    getDetails: (url) => axios.get(`${url}&apikey=b0FzW77q5nOdS9y0SA7d1xnWtcf37Z7F`).then(res => res.data).catch(err => console.log(err))
 }
 //byKeyword utan keyword parametern returnerar alla events, så det är default när man laddar upp events.
 const search = {
@@ -16,7 +17,7 @@ const search = {
 }
 
 const details = {
-    byId: (id) => request.get(`/events/${id}?locale=sv-se`)
+    byId: (id) => request.getDetails(`/events/${id}?locale=sv-se`)
 }
 
 const agent = {

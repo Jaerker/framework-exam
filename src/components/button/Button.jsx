@@ -1,8 +1,19 @@
-const Button = () => {
+import { Link } from 'react-router-dom';
+import './button.css'
+const Button = ({ text, url = '', color = 'primary' }) => {
+
+    const Colors = {
+        primary: 'var(--c-blue-green)',
+        secondary: 'var(--c-pink)',
+        warning: 'var(--c-red)'
+    }
+
+    if (url !== '') return (<Link to={url} className='button' style={{ backgroundColor: Colors[color] }} >{text}</Link>);
+
     return (
-        <div>
-            Button
-        </div>
+        <button className='button' style={{ backgroundColor: Colors[color] }}>
+            {text}
+        </button>
     );
 }
 

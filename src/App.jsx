@@ -10,7 +10,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 
+
 const App = () => {
+
+
+
     return (
         <BrowserRouter>
             <article className='main-content'>

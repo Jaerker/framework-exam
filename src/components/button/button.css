@@ -1,0 +1,12 @@
+.button {
+    width: 100%;
+    color: var(--c-white);
+    font-family: var(--f-fira);
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}

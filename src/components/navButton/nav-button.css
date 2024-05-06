@@ -1,0 +1,19 @@
+.order-counter {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding-left: 2.2rem;
+}
+
+.order-counter p {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: auto;
+    line-height: 1.3rem;
+    border: solid 2px var(--c-pink);
+    border-radius: 100%;
+    font-weight: 500;
+    background: var(--c-purple);
+}

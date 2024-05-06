@@ -1,5 +1,5 @@
 
-import CartPage from './pages/cartPage/CartPage';
+import OrderPage from './pages/orderPage/OrderPage';
 import HomePage from './pages/homePage/HomePage';
 import EventsPage from './pages/eventsPage/EventsPage';
 import DetailsPage from './pages/detailsPage/DetailsPage';
@@ -23,7 +23,7 @@ const App = () => {
                     <Route path="/events" element={<EventsPage />} />
                     <Route path="/event/:id" element={<DetailsPage />} />
                     <Route path="/tickets" element={<TicketsPage />} />
-                    <Route path="/cart" element={<CartPage />} />
+                    <Route path="/order" element={<OrderPage />} />
                 </Routes>
             </article>
             <Navbar />

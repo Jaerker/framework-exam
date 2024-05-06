@@ -1,10 +1,21 @@
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarCheck, faCartShopping, faRug } from '@fortawesome/free-solid-svg-icons';
 import './navbar.css';
 import NavButton from '../navButton/NavButton';
+import { useEffect, useState } from 'react';
+import { useCartStore } from '../../store/cartStore';
+
 
 const Navbar = () => {
+    const cart = useCartStore((state) => state.cart);
+
+    const [orderCounter, setOrderCounter] = useState(0);
+
+    useEffect(() => {
+
+        setOrderCounter(cart.reduce((acc, item) => acc + item.amount, 0) === 0 ? false : cart.reduce((acc, item) => acc + item.amount, 0));
+
+    }, [cart]);
+
     return (
         <nav className='navbar'>
             <ul className='navbar__list'>
@@ -15,7 +26,7 @@ const Navbar = () => {
                     <NavButton path='/tickets' icon={faRug} text='Biljetter' />
                 </li>
                 <li className='navbar__item'>
-                    <NavButton path='/cart' icon={faCartShopping} text='Order' />
+                    <NavButton path='/order' icon={faCartShopping} text='Order' orderCounter={orderCounter} />
                 </li>
             </ul>
         </nav>

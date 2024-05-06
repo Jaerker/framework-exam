@@ -10,12 +10,14 @@
     --c-purple: #231F42;
     --c-purple-t8: rgb(35, 31, 66, 0.7);
     --c-pink: #F56B9A;
+    --c-pink-t5: rgb(245, 107, 154, 0.5);
     --c-blue-green: #37AEAB;
     --c-red: #AE3745;
     --c-linear-gradient: linear-gradient(var(--c-pink) 0%, var(--c-purple) 55%);
     --c-white: #FFFFFF;
     --c-white-t8: rgb(255, 255, 255, 0.8);
     --c-white-t7: rgb(255, 255, 255, 0.7);
+    --c-white-t5: rgb(255, 255, 255, 0.5);
     --c-white-t2: rgb(255, 255, 255, 0.2);
     --c-white-t1: rgb(255, 255, 255, 0.1);
 
@@ -45,7 +47,7 @@
     margin: 2rem;
     flex-direction: column;
     align-items: center;
-    gap: 2.5rem;
+    gap: 1rem;
     background: var(--c-purple);
     padding-bottom: 130px;
 }

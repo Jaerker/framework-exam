@@ -8,18 +8,49 @@
 :root {
     font-size: 16px;
     --c-purple: #231F42;
-    --c-purple-t8: rgb(35, 31, 66, 0.7);
+    --c-purple-t08: rgb(35, 31, 66, 0.8);
+    --c-purple-t07: rgb(35, 31, 66, 0.7);
+    --c-purple-t06: rgb(35, 31, 66, 0.6);
+    --c-purple-t05: rgb(35, 31, 66, 0.5);
+    --c-purple-t04: rgb(35, 31, 66, 0.4);
+    --c-purple-t03: rgb(35, 31, 66, 0.3);
+    --c-purple-t02: rgb(35, 31, 66, 0.2);
+    --c-purple-t01: rgb(35, 31, 66, 0.1);
     --c-pink: #F56B9A;
-    --c-pink-t5: rgb(245, 107, 154, 0.5);
+    --c-pink-t08: rgb(245, 107, 154, 0.8);
+    --c-pink-t07: rgb(245, 107, 154, 0.7);
+    --c-pink-t06: rgb(245, 107, 154, 0.5);
+    --c-pink-t05: rgb(245, 107, 154, 0.5);
+    --c-pink-t04: rgb(245, 107, 154, 0.4);
+    --c-pink-t03: rgb(245, 107, 154, 0.3);
+    --c-pink-t02: rgb(245, 107, 154, 0.2);
+    --c-pink-t01: rgb(245, 107, 154, 0.1);
     --c-blue-green: #37AEAB;
     --c-red: #AE3745;
     --c-linear-gradient: linear-gradient(var(--c-pink) 0%, var(--c-purple) 55%);
     --c-white: #FFFFFF;
-    --c-white-t8: rgb(255, 255, 255, 0.8);
-    --c-white-t7: rgb(255, 255, 255, 0.7);
-    --c-white-t5: rgb(255, 255, 255, 0.5);
-    --c-white-t2: rgb(255, 255, 255, 0.2);
-    --c-white-t1: rgb(255, 255, 255, 0.1);
+    --c-white-t08: rgb(255, 255, 255, 0.8);
+    --c-white-t07: rgb(255, 255, 255, 0.7);
+    --c-white-t06: rgb(255, 255, 255, 0.6);
+    --c-white-t05: rgb(255, 255, 255, 0.5);
+    --c-white-t04: rgb(255, 255, 255, 0.4);
+    --c-white-t03: rgb(255, 255, 255, 0.3);
+    --c-white-t02: rgb(255, 255, 255, 0.2);
+    --c-white-t01: rgb(255, 255, 255, 0.1);
+
+    --c-black: #000000;
+    --c-black-t08: rgb(0, 0, 0, 0.8);
+    --c-black-t07: rgb(0, 0, 0, 0.7);
+    --c-black-t06: rgb(0, 0, 0, 0.6);
+    --c-black-t05: rgb(0, 0, 0, 0.5);
+    --c-black-t04: rgb(0, 0, 0, 0.4);
+    --c-black-t03: rgb(0, 0, 0, 0.3);
+    --c-black-t02: rgb(0, 0, 0, 0.2);
+    --c-black-t01: rgb(0, 0, 0, 0.1);
+    --c-black-t003: rgb(0, 0, 0, 0.03);
+    --c-black-t006: rgb(0, 0, 0, 0.06);
+    --c-black-t009: rgb(0, 0, 0, 0.09);
+    --c-black-t012: rgb(0, 0, 0, 0.12);
 
     --f-sansita: 'Sansita One';
     --f-fira: 'Fira Sans';
@@ -43,7 +74,7 @@
 
 .main-content {
     display: flex;
-    min-height: 90vh;
+    min-height: 100vh;
     width: 90vw;
     margin: 2rem 0;
     flex-direction: column;

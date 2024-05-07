@@ -1,4 +1,5 @@
-.empty-cart {
+.empty-cart,
+.page-loading {
     font-weight: 500;
     font-size: 1.8rem;
     width: 83vw;
@@ -34,7 +35,7 @@
 
 .list-item__price {
     padding-top: .5rem;
-    color: var(--c-white-t8);
+    color: var(--c-white-t08);
     text-align: end;
     font-weight: 500;
 }
@@ -47,7 +48,7 @@
 
 .total-amount {
     font-size: 1.8rem;
-    color: var(--c-white-t8);
+    color: var(--c-white-t08);
     padding-bottom: 1rem;
     font-weight: 500;
 }

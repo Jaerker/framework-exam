@@ -5,16 +5,37 @@ export const useTicketStore = create((set, get) => ({
     events: localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [],
     addTicket: (ticket) => set((state) => ({ events: [...state.events, ticket] })),
     saveToLocal: () => localStorage.setItem('events', JSON.stringify(get().events)),
+
+    createPurchase: (cartList) => set((state) => {
+        const ticketList = [];
+        cartList.forEach(event => {
+            const tickets = [];
+            const randomSeat = Math.floor(Math.random() * 220);
+            const randomSection = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+            for (let i = 0; i < event.amount; i++) {
+                tickets.unshift({
+                    id: Math.random().toString(36).slice(2, 7).toUpperCase(),
+                    seat: randomSeat + i, //Fick tipset av Copilot med att använda index siffran för att hålla ihop biljetterna, måste ge credit where credit is due! Jag tänkte plussa på randomSeat i slutet av loopen (och förmodligen använt en forEach istället) så den tackar jag AI stasrkt för!
+                    section: randomSection
+                });
+            }
+            ticketList.unshift({
+                eventObject: event.eventObject,
+                tickets: tickets
+            });
+        });
+        return { events: [...state.events, ...ticketList] };
+    }),
 }));
 
-/**
- * createTicket ska skapa ett nytt objekt som ska läggas till i tickets listan.
-
+/** Mina noter innan jag kodar:
+ * 
+ * createPurchase ska skapa ett nytt objekt som ska läggas till i tickets listan.
  * 
  * tickets arrayen kan se ut så här: 
  * [
  *     {
- *          event: <Hela event objektet från ticketmaster>,
+ *          eventObject: <Hela event objektet från ticketmaster>,
  *          tickets: [{}]
  *     }
  * ]

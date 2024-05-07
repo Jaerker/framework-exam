@@ -3,7 +3,7 @@
     font-style: italic;
     text-align: center;
     padding: 0 2rem;
-    color: var(--c-white-t7);
+    color: var(--c-white-t07);
 }
 
 .details-wrapper {
@@ -46,13 +46,13 @@
     text-align: center;
     color: var(--c-pink);
     padding: 1rem;
-    background: var(--c-purple-t8);
+    background: var(--c-purple-t08);
     border-radius: 5px;
 }
 
 .event-information__location {
     font-size: 1.2rem;
-    color: var(--c-white-t7);
+    color: var(--c-white-t07);
     text-align: center;
 }
 

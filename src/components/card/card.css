@@ -34,7 +34,7 @@
     flex-direction: column;
     flex-grow: 1;
     padding-left: 1rem;
-    border-bottom: solid 2px var(--c-white-t2);
+    border-bottom: solid 2px var(--c-white-t02);
 }
 
 .event-card__name {
@@ -50,7 +50,7 @@
     font-weight: 400;
     padding-top: .2rem;
     text-align: start;
-    color: var(--c-white-t7);
+    color: var(--c-white-t07);
 }
 
 .event-card__city {
@@ -67,7 +67,7 @@
 
 .event-card__time {
     font-weight: 500;
-    color: var(--c-white-t7);
+    color: var(--c-white-t07);
 }
 
 .event-card__price {

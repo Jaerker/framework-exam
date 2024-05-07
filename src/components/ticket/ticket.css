@@ -1,0 +1,132 @@
+/* Genomgående style bitar */
+.ticket__event-location,
+.ticket__sub-section-info,
+.ticket__info-item {
+    padding-left: 1rem;
+}
+
+
+.ticket-wrapper {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 100%;
+    background: var(--c-white);
+    color: var(--c-black);
+    overflow: hidden;
+}
+
+.ticket__grid-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 20px;
+    background: var(--c-white);
+    border-bottom: 2px dotted var(--c-black-t02);
+}
+
+.ticket__grid-section:nth-child(2) {
+    background: var(--c-black-t003);
+}
+
+.ticket__grid-section:nth-child(3) {
+    background: var(--c-black-t006);
+}
+
+.ticket__grid-section:nth-child(4) {
+    background: var(--c-black-t009);
+    border-bottom: none;
+}
+
+
+.ticket__small-header {
+    font-size: .8rem;
+    font-weight: 800;
+    padding-top: .5rem;
+    padding-left: 1rem;
+    color: var(--c-black-t04);
+}
+
+.ticket__event-name {
+    font-family: var(--f-sansita);
+    font-size: 1.8rem;
+    font-weight: 100;
+    color: var(--c-pink);
+    padding: 1rem;
+}
+
+.ticket__event-address {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    color: var(--c-black-t07);
+
+}
+
+.ticket__event-location {
+    font-size: 0.9rem;
+    padding-left: 1rem;
+    padding-bottom: 4rem;
+    color: var(--c-black-t07);
+
+}
+
+.ticket__barcode-section {
+    background: var(--c-black-t012);
+    min-height: 20px;
+}
+
+.ticket__grid-section--with-child-sections {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.ticket__sub-section {
+    flex-grow: 1;
+    width: 100%;
+    border-right: dotted 2px var(--c-black-t04);
+}
+
+.ticket__sub-section:last-child {
+    border-right: none;
+}
+
+.ticket__sub-section-info {
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    font-size: 1.3rem;
+    color: var(--c-black-t06);
+}
+
+
+.ticket__info-list {
+    list-style: none;
+    padding-top: .5rem;
+}
+
+.ticket__barcode-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: .5rem;
+}
+
+.ticket__barcode {
+    font-family: var(--f-barcode);
+    font-weight: 100;
+    text-align: center;
+    font-size: 8rem;
+    line-height: 2.5rem;
+    padding-top: 2.5rem;
+    color: var(--c-black-t08);
+
+}
+
+.ticket__readable-barcode {
+    text-align: center;
+    letter-spacing: .3rem;
+    color: var(--c-black-t05);
+}

@@ -5,7 +5,7 @@
 }
 
 .search-bar {
-    background: var(--c-white-t1);
+    background: var(--c-white-t01);
     border-radius: 3px;
     display: flex;
     width: 100%;
@@ -28,7 +28,7 @@
 }
 
 .filter-icon--inactive {
-    color: var(--c-white-t2);
+    color: var(--c-white-t02);
 }
 
 .search-field {
@@ -47,7 +47,7 @@
     grid-template-rows: repeat(4, 1.6rem);
     justify-content: center;
     overflow: hidden;
-    background: var(--c-white-t1);
+    background: var(--c-white-t01);
     border-top: solid 2px transparent;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
@@ -57,7 +57,7 @@
 .filter-search--active-with-city,
 .filter-search--active {
     padding: .5rem 0;
-    border-color: var(--c-white-t2);
+    border-color: var(--c-white-t02);
 }
 
 .filter-search--inactive {

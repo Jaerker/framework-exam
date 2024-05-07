@@ -1,15 +1,19 @@
 /* Genomgående style bitar */
 .ticket__event-location,
 .ticket__sub-section-info,
-.ticket__info-item {
+.ticket__info-item,
+.ticket__event-city {
     padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 
 .ticket-wrapper {
+    user-select: none;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
+    max-width: 370px;
     width: 100%;
     background: var(--c-white);
     color: var(--c-black);
@@ -19,7 +23,7 @@
 .ticket__grid-section {
     display: flex;
     flex-direction: column;
-    min-height: 20px;
+
     background: var(--c-white);
     border-bottom: 2px dotted var(--c-black-t02);
 }
@@ -42,6 +46,7 @@
     font-size: .8rem;
     font-weight: 800;
     padding-top: .5rem;
+    padding-right: 1rem;
     padding-left: 1rem;
     color: var(--c-black-t04);
 }
@@ -58,22 +63,28 @@
     font-size: 1.2rem;
     font-weight: 600;
     padding-top: 1rem;
+    padding-right: 1rem;
     padding-left: 1rem;
     color: var(--c-black-t07);
 
 }
 
 .ticket__event-location {
+    padding-top: 1rem;
     font-size: 0.9rem;
     padding-left: 1rem;
-    padding-bottom: 4rem;
+    padding-right: 1rem;
     color: var(--c-black-t07);
+}
 
+.ticket__event-city {
+    color: var(--c-black-t07);
+    padding-bottom: 4rem;
+    font-weight: 500;
 }
 
 .ticket__barcode-section {
     background: var(--c-black-t012);
-    min-height: 20px;
 }
 
 .ticket__grid-section--with-child-sections {
@@ -85,7 +96,7 @@
 .ticket__sub-section {
     flex-grow: 1;
     width: 100%;
-    border-right: dotted 2px var(--c-black-t04);
+    border-right: dotted 2px var(--c-black-t02);
 }
 
 .ticket__sub-section:last-child {
@@ -100,9 +111,32 @@
 }
 
 
+
 .ticket__info-list {
-    list-style: none;
-    padding-top: .5rem;
+    padding: .5rem 0;
+    text-align: center;
+}
+
+
+.ticket__info-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: .5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--c-black-t07);
+}
+
+.ticket__info-item:last-child {
+    text-decoration: underline;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: auto;
 }
 
 .ticket__barcode-section {
@@ -127,6 +161,7 @@
 
 .ticket__readable-barcode {
     text-align: center;
-    letter-spacing: .3rem;
+    letter-spacing: .4rem;
     color: var(--c-black-t05);
+    padding-bottom: .5rem;
 }

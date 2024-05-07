@@ -5,6 +5,7 @@
     border-top: 3px solid var(--c-pink);
     bottom: 0;
     background: var(--c-purple);
+    z-index: 3;
 }
 
 .navbar__list {

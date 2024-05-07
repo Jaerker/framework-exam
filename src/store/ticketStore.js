@@ -13,7 +13,7 @@ export const useTicketStore = create((set, get) => ({
             const randomSeat = Math.floor(Math.random() * 220);
             const randomSection = String.fromCharCode(65 + Math.floor(Math.random() * 26));
             for (let i = 0; i < event.amount; i++) {
-                tickets.unshift({
+                tickets.push({
                     id: Math.random().toString(36).slice(2, 7).toUpperCase(),
                     seat: randomSeat + i, //Fick tipset av Copilot med att använda index siffran för att hålla ihop biljetterna, måste ge credit where credit is due! Jag tänkte plussa på randomSeat i slutet av loopen (och förmodligen använt en forEach istället) så den tackar jag AI stasrkt för!
                     section: randomSection
@@ -24,6 +24,8 @@ export const useTicketStore = create((set, get) => ({
                 tickets: tickets
             });
         });
+        ticketList.sort((a, b) => a.eventObject.dates.start.localDate.localeCompare(b.eventObject.dates.start.localDate));
+        localStorage.setItem('events', JSON.stringify([...state.events, ...ticketList]));
         return { events: [...state.events, ...ticketList] };
     }),
 }));

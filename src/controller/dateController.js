@@ -25,6 +25,9 @@ export const formatLongMonth = (date) => {
     const newDate = new Date(date);
     return Month[newDate.getMonth()].long;
 }
+export const formatDayAndShortMonth = (date) => {
+    return `${formatDay(date)} ${formatShortMonth(date)}`;
+}
 export const formatTime = (time) => {
     return `${time.slice(0, 2)}.${time.slice(3, 5)}`;
 }

@@ -7,16 +7,27 @@ import TicketsPage from './pages/ticketsPage/TicketsPage';
 import ErrorPage from './pages/errorPage/ErrorPage.jsx'
 import Navbar from './components/navbar/Navbar.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import { usePathStore } from './store/pathStore.js';
+import { useEffect, useState } from 'react';
 
 
 
 const App = () => {
+    const { path } = usePathStore((state) => state);
+    const [bgClass, setBgClass] = useState('');
+    useEffect(() => {
+        if (path === '/tickets') {
+            setBgClass('bg-holder--gradient');
+        }
+        else {
+            setBgClass('');
 
-
-
+        }
+    }, [path]);
     return (
         <BrowserRouter>
+            <span className={`bg-holder ${bgClass}`}>
+            </span>
             <article className='main-content'>
                 <Routes>
                     <Route path="/" element={<HomePage />} />

@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
+import { usePathStore } from '../../store/pathStore.js';
 import SearchBar from '../../components/searchBar/SearchBar';
 import agent from '../../api/agent';
 import CardContainer from '../../components/cardContainer/CardContainer';
 
 const EventsPage = () => {
 
+    const { setPath } = usePathStore((state) => state);
     const [searchValue, setSearchValue] = useState({
         filter: 'keyword',
         radius: 50,
@@ -41,6 +43,9 @@ const EventsPage = () => {
     useEffect(() => {
         updateSearchResults();
     }, [searchValue]);
+    useEffect(() => {
+        setPath('/events');
+    }, []);
 
     return (
         <>

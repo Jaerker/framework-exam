@@ -29,21 +29,6 @@ import { formatDay, formatShortMonth, formatTime } from '../../controller/dateCo
 
 const Card = ({ data }) => {
 
-    const Month = {
-        0: 'JAN',
-        1: 'FEB',
-        2: 'MAR',
-        3: 'APR',
-        4: 'MAJ',
-        5: 'JUN',
-        6: 'JUL',
-        7: 'AUG',
-        8: 'SEP',
-        9: 'OKT',
-        10: 'NOV',
-        11: 'DEC'
-    }
-
     const [startDate, setStartDate] = useState("");
     const [bgImage, setBgImage] = useState("");
 

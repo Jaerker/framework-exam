@@ -67,7 +67,8 @@ const Card = ({ data }) => {
                     </section>
                     <section className='event-card__information'>
                         <h2 className='event-card__name'>{data.name}</h2>
-                        <p className='event-card__location'>{data._embedded.venues[0].name || data._embedded.venues[0].address.line1}, {data._embedded.venues[0].city.name}</p>
+                        <p className='event-card__city'>{data._embedded.venues[0].city.name}</p>
+                        <p className='event-card__location'>{data._embedded.venues[0].name || data._embedded.venues[0].address.line1}</p>
                         <section className='event-card__bottom-section'>
                             {data.dates.start.localTime ? <p className='event-card__time'>{formatTime(data.dates.start.localTime)}</p> : <p className='event-card__time'>Tid ej satt</p>}
                             {data.priceRanges ? <p className='event-card__price'>Från {data.priceRanges[0].min} {data.priceRanges[0].currency || 'SEK'}</p> : <p className='event-card__price'> Ej tillgängligt</p>}

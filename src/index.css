@@ -44,7 +44,8 @@
 .main-content {
     display: flex;
     min-height: 90vh;
-    margin: 2rem;
+    width: 90vw;
+    margin: 2rem 0;
     flex-direction: column;
     align-items: center;
     gap: 1rem;

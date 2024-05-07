@@ -21,6 +21,7 @@ const OrderPage = () => {
     }, [cart]);
 
     const handlePurchase = () => {
+        console.log('Purchase complete!');
     }
 
 
@@ -37,8 +38,8 @@ const OrderPage = () => {
                     <ul className='order-list'>
                         <Button text='Töm kundkorg' color='warning' onClick={clearCart} />
 
-                        {cart.map((item, index) => (<li className='order-list__item'>
-                            <CounterContainer key={index} event={item.eventObject}>
+                        {cart.map((item, index) => (<li key={index} className='order-list__item'>
+                            <CounterContainer event={item.eventObject}>
                                 <h3 className='list-item__header'>{item.eventObject.name}</h3>
                                 <p className='list-item__sub-header'>{formatDay(item.eventObject.dates.start.localDate)} {formatLongMonth(item.eventObject.dates.start.localDate)}, kl {formatTime(item.eventObject.dates.start.localTime)} </p>
                                 <p className='list-item__price'>{(item.eventObject.priceRanges[0].min + item.eventObject.priceRanges[0].max) / 2} SEK/st</p>

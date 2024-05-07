@@ -36,7 +36,6 @@ const DetailsPage = () => {
 
 
 		setLoading(false);
-		console.log(eventDetails);
 	}
 	useEffect(() => {
 		fetchData();
@@ -44,10 +43,10 @@ const DetailsPage = () => {
 
 	return (
 		<article className='details-wrapper'>
+			<h1 className='page-header'>Event</h1>
 
-			{loading ? <h1 className='page-header'>Loading...</h1> :
+			{loading ? <p className='page-sub-header'>Loading...</p> :
 				<>
-					<h1 className='page-header'>Event</h1>
 					{event === null ? <p className='page-sub-header'>Tyvärr så hittade vi inget om eventet!</p> :
 						<>
 							<p className='page-sub-header'>You are about to score some tickets to</p>

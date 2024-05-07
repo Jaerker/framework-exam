@@ -19,11 +19,12 @@ const App = () => {
         <BrowserRouter>
             <article className='main-content'>
                 <Routes>
-                    <Route path="/" element={<HomePage />} errorElement={<ErrorPage />} />
+                    <Route path="/" element={<HomePage />} />
                     <Route path="/events" element={<EventsPage />} />
                     <Route path="/event/:id" element={<DetailsPage />} />
                     <Route path="/tickets" element={<TicketsPage />} />
                     <Route path="/order" element={<OrderPage />} />
+                    <Route path="*" element={<ErrorPage />} />
                 </Routes>
             </article>
             <Navbar />

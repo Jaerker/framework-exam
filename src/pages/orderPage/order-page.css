@@ -11,7 +11,7 @@
     font-family: var(--f-sansita);
     font-weight: 100;
     letter-spacing: .1rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 130%;
     color: var(--c-pink);
     user-select: none;
@@ -29,12 +29,14 @@
 .list-item__sub-header {
     font-size: 1.2rem;
     color: var(--c-blue-green);
-    padding-top: 1rem;
+    padding-top: .5rem;
 }
 
 .list-item__price {
     padding-top: .5rem;
     color: var(--c-white-t8);
+    text-align: end;
+    font-weight: 500;
 }
 
 .total-amount-announcer {
@@ -44,7 +46,8 @@
 }
 
 .total-amount {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--c-white-t8);
     padding-bottom: 1rem;
+    font-weight: 500;
 }

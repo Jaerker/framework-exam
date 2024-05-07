@@ -1,8 +1,9 @@
 .button {
-    width: 100%;
+    width: 90%;
     color: var(--c-white-t8);
     font-family: var(--f-fira);
     padding: 1rem 0;
+    margin: auto;
     font-size: 1.5rem;
     font-weight: 500;
     border: none;

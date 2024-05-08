@@ -54,7 +54,6 @@
     transition: all .15s ease-in-out;
 }
 
-.filter-search--active-with-city,
 .filter-search--active {
     padding: .5rem 0;
     border-color: var(--c-white-t02);
@@ -65,12 +64,9 @@
 }
 
 .filter-search--active {
-    height: 5.5rem;
+    height: 6rem;
 }
 
-.filter-search--active-with-city {
-    height: 9rem;
-}
 
 .radio-buttons {
     border: none;

@@ -22,12 +22,11 @@ const App = () => {
         }
         else {
             setBgClass('');
-
         }
     }, [path]);
     return (
         <BrowserRouter>
-            <span className={`bg-holder ${bgClass}`}>
+            <span className={`bg-holder ${bgClass}`} open={path === '/tickets'}>
             </span>
             <article className='main-content'>
                 <Routes>
@@ -37,7 +36,7 @@ const App = () => {
                     <Route path="/tickets" element={<TicketsPage />} />
                     <Route path="/order" element={<OrderPage />} />
                     <Route path="*" element={<ErrorPage />} />
-                    <Route path="/order/:id" element={<PurchaseCompletePage />} />
+                    <Route path="/order/complete" element={<PurchaseCompletePage />} />
                 </Routes>
             </article>
             <Navbar />

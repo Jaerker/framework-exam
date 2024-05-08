@@ -4,6 +4,7 @@ import './search-bar.css';
 import { useState } from 'react';
 const SearchBar = ({ onSearchButtonClicked, value, onValueChanged }) => {
     const [filterActive, setFilterActive] = useState(false);
+
     return (
         <form className='search-form-container' onSubmit={(e) => onSearchButtonClicked(e, setFilterActive)} >
             <section className='search-bar'>
@@ -12,7 +13,7 @@ const SearchBar = ({ onSearchButtonClicked, value, onValueChanged }) => {
                 </button>
                 <input className='search-field' aria-label='Sökfält' size={'lg'} type='search' name='searchInput' value={value.searchInput} onChange={onValueChanged} />
             </section>
-            <section className={`filter-search ${filterActive ? value.filter === 'city' ? 'filter-search--active-with-city' : 'filter-search--active' : 'filter-search--inactive'}`}>
+            <section className={`filter-search ${filterActive ? 'filter-search--active' : 'filter-search--inactive'}`}>
                 <fieldset className='radio-buttons'>
                     <legend className='span-2'>Sök baserat på</legend>
                     <label htmlFor='byCity'>Stad</label>
@@ -21,12 +22,7 @@ const SearchBar = ({ onSearchButtonClicked, value, onValueChanged }) => {
                     <input type='radio' value='keyword' defaultChecked onChange={onValueChanged} name='filter' id='byKeyword' />
 
                 </fieldset>
-                {value.filter === 'city' &&
-                    <>
-                        <label htmlFor='radiusAroundCity' className='span-2'>Radie från stad: <i>{value.radius}KM</i></label>
-                        <input className='span-2' type='range' name='radius' id='radiusAroundCity' min='5' max='100' step='1' value={value.radius} onChange={onValueChanged} />
-                    </>
-                }
+
 
             </section>
         </form>

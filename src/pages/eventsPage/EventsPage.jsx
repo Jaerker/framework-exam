@@ -15,9 +15,10 @@ const EventsPage = () => {
     const [searchResults, setSearchResults] = useState(null);
 
     const onInputChanged = (e) => {
-        const newValue = { ...searchValue, [e.target.name]: e.target.value }
+
+        const newValue = { ...searchValue, [e.target.name]: e.target.value };
+
         setSearchValue(newValue)
-        // setSearchValue(e.target.value);
 
     }
     const onSearchButtonClicked = (e, setFilterActive) => {
@@ -27,10 +28,12 @@ const EventsPage = () => {
     const updateSearchResults = async () => {
         let results = null;
         if (searchValue.filter === 'keyword') {
+            console.log('searching by keyword')
             results = await agent.search.byKeyword(searchValue.searchInput);
         }
         else {
-            results = await agent.search.byRadiusAroundCity(searchValue.searchInput, searchValue.radius);
+            console.log('searching by city')
+            results = await agent.search.byCity(searchValue.searchInput);
         }
 
         if (results) setSearchResults(results);

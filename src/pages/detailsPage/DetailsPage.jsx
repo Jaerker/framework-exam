@@ -60,7 +60,7 @@ const DetailsPage = () => {
 							</section>
 
 							<CounterContainer event={event}>
-								{event.priceRanges ? <h2>{(event.priceRanges[0].min + event.priceRanges[0].max) / 2} {event.priceRanges[0].currency || 'SEK'}</h2> : <h2> Ej tillgängligt</h2>}
+								{event.priceRanges ? <h2>{(event.priceRanges[0].min + event.priceRanges[0].max) / 2} {event.priceRanges[0].currency || 'SEK'}/st</h2> : <h2> Ej tillgängligt</h2>}
 							</CounterContainer>
 							<Button url='/order' text='Gå till varukorgen' color='primary' />
 

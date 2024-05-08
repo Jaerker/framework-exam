@@ -4,13 +4,9 @@ export const useTicketStore = create((set, get) => ({
     events: localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [],
     addTicket: (ticket) => set((state) => ({ events: [...state.events, ticket] })),
     saveToLocal: () => localStorage.setItem('events', JSON.stringify(get().events)),
-
-    createPurchase: (cartList) => set((state) => {
+    createPurchase: (cartList, ticketListId) => set((state) => {
         const ticketList = [];
-        let ticketListId = crypto.randomUUID();
-        while (state.events.some(event => event.id === ticketListId)) {
-            ticketListId = crypto.randomUUID();
-        }
+
         cartList.forEach(event => {
             const tickets = [];
             const randomSeat = Math.floor(Math.random() * 220);
@@ -37,8 +33,8 @@ export const useTicketStore = create((set, get) => ({
         });
         ticketList.sort((a, b) => a.eventObject.dates.start.localDate.localeCompare(b.eventObject.dates.start.localDate));
         localStorage.setItem('events', JSON.stringify([...ticketList, ...state.events]));
-        return { events: [...state.events, ...ticketList] };
-    }),
+        return { events: [...ticketList, ...state.events] };
+    })
 }));
 
 /** Mina noter innan jag kodar:

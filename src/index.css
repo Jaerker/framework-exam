@@ -26,7 +26,7 @@
     --c-pink-t01: rgb(245, 107, 154, 0.1);
     --c-blue-green: #37AEAB;
     --c-red: #AE3745;
-    --c-linear-gradient: linear-gradient(var(--c-pink) 0%, var(--c-purple) 55%);
+    --c-linear-gradient: linear-gradient(var(--c-pink) 0%, var(--c-purple) 45%);
     --c-white: #FFFFFF;
     --c-white-t08: rgb(255, 255, 255, 0.8);
     --c-white-t07: rgb(255, 255, 255, 0.7);
@@ -69,7 +69,7 @@
     color: var(--c-white);
     background: var(--c-purple);
     font-family: var(--f-fira);
-    max-height: 100vh;
+    height: 100%;
 }
 
 .bg-holder {
@@ -77,14 +77,40 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    background: var(--c-linear-gradient);
     z-index: 0;
-    background: var(--c-purple);
+    height: 100vh;
+
 }
 
-.bg-holder--gradient {
-    background: var(--c-linear-gradient);
+.bg-holder[open] {
+    animation: gradient-show 1s ease-in-out forwards;
+}
 
+.bg-holder:not([open]) {
+    display: block;
+    top: -50vh;
+}
+
+@keyframes gradient-show {
+    0% {
+        top: -50vh;
+    }
+
+    100% {
+        top: 0vh;
+
+    }
+}
+
+@keyframes gradient-hide {
+    0% {
+        top: 0vh;
+    }
+
+    100% {
+        top: -50vh;
+    }
 }
 
 .main-content {

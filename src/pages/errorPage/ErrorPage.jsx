@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const ErrorPage = () => {
     const navigate = useNavigate();
 
-
-
     return (
         <>
             <h1 className='page-header'>The party was not found!</h1>

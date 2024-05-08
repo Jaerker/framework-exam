@@ -30,13 +30,13 @@ const App = () => {
             </span>
             <article className='main-content'>
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/events" element={<EventsPage />} />
-                    <Route path="/event/:id" element={<DetailsPage />} />
-                    <Route path="/tickets" element={<TicketsPage />} />
-                    <Route path="/order" element={<OrderPage />} />
-                    <Route path="*" element={<ErrorPage />} />
-                    <Route path="/order/complete" element={<PurchaseCompletePage />} />
+                    <Route path='/' element={<HomePage />} />
+                    <Route path='/events' element={<EventsPage />} />
+                    <Route path='/event/:id' element={<DetailsPage />} />
+                    <Route path='/tickets' element={<TicketsPage />} />
+                    <Route path='/order' element={<OrderPage />} />
+                    <Route path='*' element={<ErrorPage />} />
+                    <Route path='/order/complete' element={<PurchaseCompletePage />} />
                 </Routes>
             </article>
             <Navbar />

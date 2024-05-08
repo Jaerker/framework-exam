@@ -18,7 +18,7 @@ const EventsPage = () => {
 
         const newValue = { ...searchValue, [e.target.name]: e.target.value };
 
-        setSearchValue(newValue)
+        setSearchValue(newValue);
 
     }
     const onSearchButtonClicked = (e, setFilterActive) => {

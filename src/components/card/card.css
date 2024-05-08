@@ -3,7 +3,6 @@
     display: grid;
     grid-template-columns: 90px 5fr;
     gap: .5rem;
-
 }
 
 .event-card__date {

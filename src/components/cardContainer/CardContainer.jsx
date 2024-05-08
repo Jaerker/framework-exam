@@ -8,7 +8,7 @@ const CardContainer = ({ list }) => {
                     {list.length === 0 ?
                         <>
                             <h2 className='container-message'>Här var det visst tomt!</h2>
-                            <p className='container-submessage'>Testa att söka efter något annat så kan det dyka upp ny information </p>
+                            <p className='container-sub-message'>Testa att söka efter något annat så kan det dyka upp ny information </p>
                         </>
                         : <>
                             {list.map((data) => {

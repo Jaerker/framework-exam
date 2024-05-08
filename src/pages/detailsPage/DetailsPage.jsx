@@ -34,7 +34,6 @@ const DetailsPage = () => {
 			setImg('https://via.placeholder.com/500')
 		}
 
-
 		setLoading(false);
 	}
 	useEffect(() => {
@@ -44,7 +43,6 @@ const DetailsPage = () => {
 	return (
 		<article className='details-wrapper'>
 			<h1 className='page-header'>Event</h1>
-
 			{loading ? <p className='page-sub-header'>Loading...</p> :
 				<>
 					{event === null ? <p className='page-sub-header'>Tyvärr så hittade vi inget om eventet!</p> :
@@ -52,7 +50,6 @@ const DetailsPage = () => {
 							<p className='page-sub-header'>You are about to score some tickets to</p>
 							<section className='event-information'>
 								<img className='event-poster' src={img} alt='Bild för event' />
-
 								<h2 className='event-information__name'>{event.name}</h2>
 								<p className='event-information__date-and-time'>{formatDay(event.dates.start.localDate)} {formatLongMonth(event.dates.start.localDate)}, kl {formatTime(event.dates.start.localTime)} </p>
 								<p className='event-information__location'> @ {event._embedded.venues[0].name}, {event._embedded.venues[0].city.name}  </p>
@@ -63,15 +60,10 @@ const DetailsPage = () => {
 								{event.priceRanges ? <h2>{(event.priceRanges[0].min + event.priceRanges[0].max) / 2} {event.priceRanges[0].currency || 'SEK'}/st</h2> : <h2> Ej tillgängligt</h2>}
 							</CounterContainer>
 							<Button url='/order' text='Gå till varukorgen' color='primary' />
-
-
 						</>}
 					<Button text='Gå tillbaka' url='/events' color='warning' />
 				</>}
-
 		</article>
-
-
 	);
 }
 

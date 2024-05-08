@@ -6,7 +6,6 @@ export const useTicketStore = create((set, get) => ({
     saveToLocal: () => localStorage.setItem('events', JSON.stringify(get().events)),
     createPurchase: (cartList, ticketListId) => set((state) => {
         const ticketList = [];
-
         cartList.forEach(event => {
             const tickets = [];
             const randomSeat = Math.floor(Math.random() * 220);
@@ -24,7 +23,6 @@ export const useTicketStore = create((set, get) => ({
                     section: randomSection
                 });
             }
-
             ticketList.unshift({
                 id: ticketListId,
                 eventObject: event.eventObject,

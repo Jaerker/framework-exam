@@ -1,6 +1,6 @@
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { usePathStore } from '../../store/pathStore';
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 
 const PurchaseCompletePage = () => {
     const { setPath } = usePathStore((state) => state);
@@ -13,6 +13,7 @@ const PurchaseCompletePage = () => {
         console.log(location.state);
         setPath('/order');
     }, []);
+
     return (
         <section>
             {location.state &&

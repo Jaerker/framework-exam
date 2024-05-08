@@ -41,7 +41,6 @@
     border-bottom: none;
 }
 
-
 .ticket__small-header {
     font-size: .8rem;
     font-weight: 800;
@@ -66,7 +65,6 @@
     padding-right: 1rem;
     padding-left: 1rem;
     color: var(--c-black-t07);
-
 }
 
 .ticket__event-location {
@@ -92,7 +90,6 @@
     justify-content: space-between;
 }
 
-
 .ticket__sub-section {
     flex-grow: 1;
     width: 100%;
@@ -110,13 +107,10 @@
     color: var(--c-black-t06);
 }
 
-
-
 .ticket__info-list {
     padding: .5rem 0;
     text-align: center;
 }
-
 
 .ticket__info-item {
     display: grid;
@@ -156,7 +150,6 @@ td {
     line-height: 2.5rem;
     padding-top: 2.5rem;
     color: var(--c-black-t08);
-
 }
 
 .ticket__readable-barcode {

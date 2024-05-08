@@ -30,16 +30,5 @@ export const useCartStore = create((set, get) => ({
         localStorage.removeItem('cart');
         return { cart: [] };
     })
-
-
 }));
 
-/**
- * Listan kommer vara en array med objekt som ser ut såhär:
- * [{
- *      id: 'Z698xZq2Z17_kGt',
- *      eventObject:{}, //Hela event objektet från ticketmaster
- *      amount: 1
- * },...]
- * 
- */

@@ -6,7 +6,6 @@ const Ticket = ({ ticket, event }) => {
     const { start } = dates;
     const venue = event._embedded.venues[0];
 
-
     return (
         <article className='ticket-wrapper'>
             <section className='ticket__grid-section'>
@@ -28,7 +27,6 @@ const Ticket = ({ ticket, event }) => {
                     <p className='ticket__small-header'>FROM</p>
                     <h3 className='ticket__sub-section-info'>19.00</h3>
                 </section>
-
             </section>
             <section className='ticket__grid-section'>
                 <p className='ticket__small-header'>INFO</p>
@@ -44,8 +42,6 @@ const Ticket = ({ ticket, event }) => {
                         </tr>
                     </tbody>
                 </table>
-
-
             </section>
             <section className='ticket__barcode-section'>
                 <h1 className='ticket__barcode'>{ticket.id}</h1>

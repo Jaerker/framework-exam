@@ -20,10 +20,7 @@ const SearchBar = ({ onSearchButtonClicked, value, onValueChanged }) => {
                     <label htmlFor='byKeyword'>Nyckelord</label>
                     <input type='radio' value='city' onChange={onValueChanged} name='filter' id='byCity' />
                     <input type='radio' value='keyword' defaultChecked onChange={onValueChanged} name='filter' id='byKeyword' />
-
                 </fieldset>
-
-
             </section>
         </form>
     );

@@ -12,7 +12,6 @@ const TicketsPage = () => {
 
     return (
         <>
-
             {events.length === 0 ?
                 <>
                     <section className='no-tickets'>
@@ -27,6 +26,6 @@ const TicketsPage = () => {
                 </>
             }
         </>);
-};
+}
 
 export default TicketsPage;

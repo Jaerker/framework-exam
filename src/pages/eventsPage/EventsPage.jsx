@@ -13,13 +13,9 @@ const EventsPage = () => {
         searchInput: ''
     });
     const [searchResults, setSearchResults] = useState(null);
-
     const onInputChanged = (e) => {
-
         const newValue = { ...searchValue, [e.target.name]: e.target.value };
-
         setSearchValue(newValue);
-
     }
     const onSearchButtonClicked = (e, setFilterActive) => {
         e.preventDefault();
@@ -35,12 +31,9 @@ const EventsPage = () => {
             console.log('searching by city')
             results = await agent.search.byCity(searchValue.searchInput);
         }
-
         if (results) setSearchResults(results);
         else setSearchResults([]);
-
     }
-
 
     useEffect(() => {
         updateSearchResults();
@@ -53,7 +46,6 @@ const EventsPage = () => {
         <>
             <h1 className='page-header'>Events</h1>
             <SearchBar value={searchValue} onValueChanged={onInputChanged} onSearchButtonClicked={onSearchButtonClicked} />
-
             <CardContainer list={searchResults} />
         </>
     );

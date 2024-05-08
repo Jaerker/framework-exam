@@ -14,9 +14,9 @@ const OrderPage = () => {
     const [total, setTotal] = useState(0);
     const navigate = useNavigate();
     const { setPath } = usePathStore((state) => state);
-
     const { cart, clearCart } = useCartStore((state) => state);
     const { events, createPurchase } = useTicketStore((state) => state);
+
     useEffect(() => {
         setPath('/order');
     }, []);
@@ -26,8 +26,6 @@ const OrderPage = () => {
             currentTotal += ((item.eventObject.priceRanges[0].min + item.eventObject.priceRanges[0].max) / 2) * item.amount;
         });
         setTotal(currentTotal);
-
-
     }, [cart]);
 
     const handlePurchase = async () => {
@@ -37,21 +35,16 @@ const OrderPage = () => {
             while (events.some(event => event.id === ticketListId)) {
                 ticketListId = crypto.randomUUID();
             }
-
             createPurchase(cart, ticketListId);
-
             clearCart();
             await new Promise(resolve => setTimeout(resolve, 500)); //Låtsas att man väntar på koppling till databas
             navigate(`/order/complete`, { state: { ticketListId } });
-
         }
         catch (e) {
             console.log(e)
             setLoading(false);
         }
-
     }
-
 
     return (
         <>
@@ -64,7 +57,6 @@ const OrderPage = () => {
                             <Button text='Sök efter events' url='/events' />
                         </> :
                         <>
-
                             <ul className='order-list'>
                                 <Button text='Töm kundkorg' color='warning' onClick={clearCart} />
 
@@ -79,16 +71,9 @@ const OrderPage = () => {
                             <h2 className='total-amount-announcer'>Totalt värde på order:</h2>
                             <p className='total-amount'>{total} SEK</p>
                             <Button text='Slutför köp' onClick={handlePurchase} />
-
                         </>}
-
                 </>}
-
-
         </>
-
-
-
     );
 };
 

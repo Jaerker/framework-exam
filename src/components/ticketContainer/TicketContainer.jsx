@@ -1,5 +1,6 @@
 import Ticket from '../ticket/Ticket';
 import './ticket-container.css';
+
 const TicketContainer = ({ event }) => {
     return (
         <section className='ticket-container'>

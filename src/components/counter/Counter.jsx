@@ -2,14 +2,13 @@ import { useCartStore } from '../../store/cartStore';
 import './counter.css';
 import Plus from '../../assets/img/plus.svg';
 import Minus from '../../assets/img/minus.svg';
+
 const Counter = ({ event }) => {
     const { cart, addToCart, removeFromCart } = useCartStore((state) => ({
         cart: state.cart,
         addToCart: state.addToCart,
         removeFromCart: state.removeFromCart
     }));
-
-
 
     return (
         <section className='counter-wrapper'>

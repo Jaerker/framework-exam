@@ -33,8 +33,9 @@ const OrderPage = () => {
 
     const handlePurchase = async () => {
         setLoading(true);
-        await createPurchase(cart);
+        createPurchase(cart);
         clearCart();
+        await new Promise(resolve => setTimeout(resolve, 500)); //Låtsas att man väntar på koppling till databas
         navigate('/tickets');
 
     }
@@ -48,7 +49,7 @@ const OrderPage = () => {
                     {cart.length === 0 ?
                         <>
                             <p className='empty-cart'>Kundkorgen är tom!</p>
-                            <Button text='Gå till event' url='/events' />
+                            <Button text='Sök efter events' url='/events' />
                         </> :
                         <>
 

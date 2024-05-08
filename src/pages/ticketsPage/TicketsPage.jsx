@@ -8,13 +8,19 @@ const TicketsPage = () => {
     const { setPath } = usePathStore((state) => state);
     useEffect(() => {
         setPath('/tickets');
-
     }, []);
 
     return (
         <>
 
-            {!events ? <p className='page-loading'>Det verkar inte finnas några biljetter beställda av dig än, skynda dig innan biljetterna tar slut!!</p> :
+            {events.length === 0 ?
+                <>
+                    <section className='no-tickets'>
+                        <p>Det verkar inte finnas några biljetter beställda av dig än.</p>
+                        <p>Skynda dig innan det är för sent!</p>
+                    </section>
+                </>
+                :
                 <>
                     {events.map((event, index) =>
                         <TicketContainer key={index} event={event} />)}

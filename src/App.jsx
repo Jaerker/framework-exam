@@ -9,6 +9,7 @@ import Navbar from './components/navbar/Navbar.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { usePathStore } from './store/pathStore.js';
 import { useEffect, useState } from 'react';
+import PurchaseCompletePage from './pages/purchaseCompletePage/PurchaseCompletePage.jsx';
 
 
 
@@ -36,6 +37,7 @@ const App = () => {
                     <Route path="/tickets" element={<TicketsPage />} />
                     <Route path="/order" element={<OrderPage />} />
                     <Route path="*" element={<ErrorPage />} />
+                    <Route path="/order/:id" element={<PurchaseCompletePage />} />
                 </Routes>
             </article>
             <Navbar />

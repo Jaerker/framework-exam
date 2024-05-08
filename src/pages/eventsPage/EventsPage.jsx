@@ -12,7 +12,7 @@ const EventsPage = () => {
         radius: 50,
         searchInput: ''
     });
-    const [searchResults, setSearchResults] = useState([]);
+    const [searchResults, setSearchResults] = useState(null);
 
     const onInputChanged = (e) => {
         const newValue = { ...searchValue, [e.target.name]: e.target.value }
@@ -35,7 +35,6 @@ const EventsPage = () => {
 
         if (results) setSearchResults(results);
         else setSearchResults([]);
-
 
     }
 

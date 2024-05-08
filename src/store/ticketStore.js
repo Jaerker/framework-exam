@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 
-
 export const useTicketStore = create((set, get) => ({
     events: localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [],
     addTicket: (ticket) => set((state) => ({ events: [...state.events, ticket] })),
@@ -8,24 +7,36 @@ export const useTicketStore = create((set, get) => ({
 
     createPurchase: (cartList) => set((state) => {
         const ticketList = [];
+        let ticketListId = crypto.randomUUID();
+        while (state.events.some(event => event.id === ticketListId)) {
+            ticketListId = crypto.randomUUID();
+        }
         cartList.forEach(event => {
             const tickets = [];
             const randomSeat = Math.floor(Math.random() * 220);
             const randomSection = String.fromCharCode(65 + Math.floor(Math.random() * 26));
             for (let i = 0; i < event.amount; i++) {
+                let randomId = Math.random().toString(36).slice(2, 7).toUpperCase();
+                if (state.events.length > 0) {
+                    while (state.events.some(prevEvent => prevEvent.tickets.some(ticket => ticket.id === randomId))) {
+                        randomId = Math.random().toString(36).slice(2, 7).toUpperCase();
+                    }
+                }
                 tickets.push({
-                    id: Math.random().toString(36).slice(2, 7).toUpperCase(),
+                    id: randomId,
                     seat: randomSeat + i, //Fick tipset av Copilot med att använda index siffran för att hålla ihop biljetterna, måste ge credit where credit is due! Jag tänkte plussa på randomSeat i slutet av loopen (och förmodligen använt en forEach istället) så den tackar jag AI stasrkt för!
                     section: randomSection
                 });
             }
+
             ticketList.unshift({
+                id: ticketListId,
                 eventObject: event.eventObject,
                 tickets: tickets
             });
         });
         ticketList.sort((a, b) => a.eventObject.dates.start.localDate.localeCompare(b.eventObject.dates.start.localDate));
-        localStorage.setItem('events', JSON.stringify([...state.events, ...ticketList]));
+        localStorage.setItem('events', JSON.stringify([...ticketList, ...state.events]));
         return { events: [...state.events, ...ticketList] };
     }),
 }));

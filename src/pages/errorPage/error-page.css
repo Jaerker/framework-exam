@@ -24,3 +24,9 @@
     color: var(--c-white);
     text-align: center;
 }
+
+.error-paragraph:first-child {
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-style: italic;
+}

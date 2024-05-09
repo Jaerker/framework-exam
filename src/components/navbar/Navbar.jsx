@@ -4,16 +4,12 @@ import NavButton from '../navButton/NavButton';
 import { useEffect, useState } from 'react';
 import { useCartStore } from '../../store/cartStore';
 
-
 const Navbar = () => {
     const cart = useCartStore((state) => state.cart);
-
     const [orderCounter, setOrderCounter] = useState(0);
 
     useEffect(() => {
-
         setOrderCounter(cart.reduce((acc, item) => acc + item.amount, 0) === 0 ? false : cart.reduce((acc, item) => acc + item.amount, 0));
-
     }, [cart]);
 
     return (

@@ -37,6 +37,7 @@ const OrderPage = () => {
             }
             createPurchase(cart, ticketListId);
             clearCart();
+            setPath('/order/purchaseJustCompleted');
             await new Promise(resolve => setTimeout(resolve, 500)); //Låtsas att man väntar på koppling till databas
             navigate(`/order/complete`, { state: { ticketListId } });
         }

@@ -2,7 +2,7 @@ import { faFilter, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './search-bar.css';
 import { useState } from 'react';
-const SearchBar = ({ onSearchButtonClicked, value, onValueChanged }) => {
+const SearchBar = ({ onSearchButtonClicked, value, onValueChanged, filterOption }) => {
     const [filterActive, setFilterActive] = useState(false);
 
     return (
@@ -15,11 +15,11 @@ const SearchBar = ({ onSearchButtonClicked, value, onValueChanged }) => {
             </section>
             <section className={`filter-search ${filterActive ? 'filter-search--active' : 'filter-search--inactive'}`}>
                 <fieldset className='radio-buttons'>
-                    <legend className='span-2'>Sök baserat på</legend>
+                    <legend className='radio-legend span-2'>{filterActive ? 'Sök baserat på' : `Sök baserat på ${filterOption}`}</legend>
                     <label htmlFor='byCity'>Stad</label>
                     <label htmlFor='byKeyword'>Nyckelord</label>
-                    <input type='radio' value='city' onChange={onValueChanged} name='filter' id='byCity' />
-                    <input type='radio' value='keyword' defaultChecked onChange={onValueChanged} name='filter' id='byKeyword' />
+                    <input type='radio' value='stad' onChange={onValueChanged} name='filter' id='byCity' />
+                    <input type='radio' value='nyckelord' defaultChecked onChange={onValueChanged} name='filter' id='byKeyword' />
                 </fieldset>
             </section>
         </form>

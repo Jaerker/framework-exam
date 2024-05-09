@@ -13,7 +13,10 @@ const CardContainer = ({ list }) => {
                         : <>
                             {list.map((data) => {
                                 return (
-                                    <Card key={data.id} data={data} />
+                                    data.priceRanges ?
+                                        <Card key={data.id} data={data} />
+                                        :
+                                        <></>
                                 )
                             })}
                         </>}

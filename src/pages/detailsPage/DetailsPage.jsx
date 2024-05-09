@@ -1,22 +1,25 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './details-page.css';
 import agent from '../../api/agent';
 import { formatDay, formatLongMonth, formatTime } from '../../controller/dateController';
 import CounterContainer from '../../components/counterContainer/CounterContainer';
 import Button from '../../components/button/Button';
+import { usePathStore } from '../../store/pathStore.js';
+
 const DetailsPage = () => {
 
 	const { id } = useParams();
 	const [event, setEvent] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [img, setImg] = useState(null);
+	const { setPath } = usePathStore((state) => state);
 
 	const fetchData = async () => {
 		const eventDetails = await agent.details.byId(id);
 		setEvent(eventDetails);
+		console.log(eventDetails);
 		try {
-
 			let chosenImg = eventDetails.images[0];
 			if (eventDetails.images) {
 				const imgList = eventDetails.images.filter(img => img.ratio === '3_2');
@@ -37,6 +40,7 @@ const DetailsPage = () => {
 		setLoading(false);
 	}
 	useEffect(() => {
+		setPath('/event/id');
 		fetchData();
 	}, []);
 

@@ -1,5 +1,6 @@
 import './counter-container.css';
 import Counter from '../counter/Counter';
+
 const CounterContainer = ({ event, children, hasCounter = true, onClick = (() => { }) }) => {
     return (
         <section className='counter-container-wrapper'>

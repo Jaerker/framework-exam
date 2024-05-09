@@ -1,7 +1,13 @@
 import './home-page.css';
 import Logo from '../../assets/img/logo.svg';
+import { usePathStore } from '../../store/pathStore.js';
+import { useEffect } from 'react';
 const HomePage = () => {
 
+	const { setPath } = usePathStore((state) => state);
+	useEffect(() => {
+		setPath('/');
+	}, []);
 	return (
 		<section className='homepage-content'>
 			<img src={Logo} alt='Logga för företaget' />

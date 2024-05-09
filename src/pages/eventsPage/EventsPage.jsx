@@ -8,7 +8,7 @@ const EventsPage = () => {
 
     const { setPath } = usePathStore((state) => state);
     const [searchValue, setSearchValue] = useState({
-        filter: 'keyword',
+        filter: 'nyckelord',
         radius: 50,
         searchInput: ''
     });
@@ -23,12 +23,12 @@ const EventsPage = () => {
     }
     const updateSearchResults = async () => {
         let results = null;
-        if (searchValue.filter === 'keyword') {
-            console.log('searching by keyword')
+        if (searchValue.filter === 'nyckelord') {
+            console.log('searching by nyckelord')
             results = await agent.search.byKeyword(searchValue.searchInput);
         }
         else {
-            console.log('searching by city')
+            console.log('searching by stad')
             results = await agent.search.byCity(searchValue.searchInput);
         }
         if (results) setSearchResults(results);
@@ -45,7 +45,7 @@ const EventsPage = () => {
     return (
         <>
             <h1 className='page-header'>Events</h1>
-            <SearchBar value={searchValue} onValueChanged={onInputChanged} onSearchButtonClicked={onSearchButtonClicked} />
+            <SearchBar value={searchValue} onValueChanged={onInputChanged} onSearchButtonClicked={onSearchButtonClicked} filterOption={searchValue.filter} />
             <CardContainer list={searchResults} />
         </>
     );

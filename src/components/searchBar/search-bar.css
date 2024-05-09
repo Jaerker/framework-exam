@@ -51,22 +51,18 @@
     border-top: solid 2px transparent;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+    border-color: var(--c-white-t02);
     transition: all .15s ease-in-out;
 }
 
 .filter-search--active {
     padding: .5rem 0;
-    border-color: var(--c-white-t02);
-}
-
-.filter-search--inactive {
-    height: 0;
-}
-
-.filter-search--active {
     height: 6rem;
 }
 
+.filter-search--inactive {
+    height: 1.6rem;
+}
 
 .radio-buttons {
     border: none;
@@ -79,10 +75,22 @@
 
 }
 
-legend,
+.radio-legend,
 .span-2 {
     grid-column: span 2;
     text-align: center;
+}
+
+.radio-legend {
+    padding-top: .2rem;
+    font-weight: 600;
+    opacity: .7;
+    transition: opacity .15s;
+
+}
+
+.filter-search--active>.radio-buttons>.radio-legend {
+    opacity: 1;
 }
 
 label {

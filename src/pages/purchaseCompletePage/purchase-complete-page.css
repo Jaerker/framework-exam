@@ -1,0 +1,31 @@
+.purchase-page {
+    display: grid;
+    place-content: start center;
+    gap: 2rem;
+}
+
+.purchase-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 70vw;
+    margin: auto;
+    padding-top: 1rem;
+}
+
+.purchase-page__paragraph {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.purchase-page__paragraph:first-child {
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.purchase-page__table {
+    border: solid 2px var(--c-pink);
+    font-size: 1rem;
+    padding: .5rem 0;
+    border-radius: 3px;
+}

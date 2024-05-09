@@ -7,7 +7,7 @@ const request = {
 }
 const search = {
     byKeyword: (keyword = '', page = 0) => request.get(`/events?locale=sv-se&countryCode=SE&keyword=${keyword}&page=${page}&sort=date,name,asc`).then(res => res.events).catch(err => console.log(err)),
-    byCity: (city, page = 0) => request.get(`/events?locale=sv-se&city=${city}&page=${page}&sort=date,name,asc`).then(res => res.events).catch(err => console.log(err)),
+    byCity: (city = '', page = 0) => request.get(`/events?locale=sv-se&city=${city}&page=${page}&sort=date,name,asc`).then(res => res.events).catch(err => console.log(err)),
 }
 
 const details = {

@@ -1,6 +1,6 @@
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/button/Button';
 import './error-page.css';
-import { useNavigate } from 'react-router-dom';
 
 const ErrorPage = () => {
     const navigate = useNavigate();

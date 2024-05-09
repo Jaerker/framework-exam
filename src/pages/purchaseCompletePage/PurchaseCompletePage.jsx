@@ -2,8 +2,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { usePathStore } from '../../store/pathStore';
 import { useEffect } from 'react';
 import Logo from '../../assets/img/logo.svg';
-
 import './purchase-complete-page.css';
+
 const PurchaseCompletePage = () => {
     const { path } = usePathStore((state) => state);
     const navigate = useNavigate();
@@ -14,7 +14,6 @@ const PurchaseCompletePage = () => {
             navigate('/error');
         }
     }, []);
-
 
     return (
         <section>

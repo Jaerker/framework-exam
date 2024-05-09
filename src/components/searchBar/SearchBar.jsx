@@ -1,7 +1,8 @@
-import { faFilter, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './search-bar.css';
-import { useState } from 'react';
+
 const SearchBar = ({ onSearchButtonClicked, value, onValueChanged, filterOption }) => {
     const [filterActive, setFilterActive] = useState(false);
 

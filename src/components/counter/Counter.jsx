@@ -1,7 +1,7 @@
 import { useCartStore } from '../../store/cartStore';
-import './counter.css';
 import Plus from '../../assets/img/plus.svg';
 import Minus from '../../assets/img/minus.svg';
+import './counter.css';
 
 const Counter = ({ event }) => {
     const { cart, addToCart, removeFromCart } = useCartStore((state) => ({

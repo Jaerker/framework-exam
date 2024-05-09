@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
-import TicketContainer from '../../components/ticketContainer/TicketContainer';
 import { usePathStore } from '../../store/pathStore';
 import { useTicketStore } from '../../store/ticketStore';
+import TicketContainer from '../../components/ticketContainer/TicketContainer';
 import './tickets-page.css';
+
 const TicketsPage = () => {
     const events = useTicketStore((state) => state.events);
     const { setPath } = usePathStore((state) => state);
+
     useEffect(() => {
         setPath('/tickets');
     }, []);

@@ -1,5 +1,5 @@
-import './counter-container.css';
 import Counter from '../counter/Counter';
+import './counter-container.css';
 
 const CounterContainer = ({ event, children, hasCounter = true, onClick = (() => { }) }) => {
     return (

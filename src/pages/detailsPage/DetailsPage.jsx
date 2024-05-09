@@ -1,11 +1,11 @@
-import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import './details-page.css';
-import agent from '../../api/agent';
+import { useParams } from 'react-router-dom';
 import { formatDay, formatLongMonth, formatTime } from '../../controller/dateController';
+import { usePathStore } from '../../store/pathStore.js';
+import agent from '../../api/agent';
 import CounterContainer from '../../components/counterContainer/CounterContainer';
 import Button from '../../components/button/Button';
-import { usePathStore } from '../../store/pathStore.js';
+import './details-page.css';
 
 const DetailsPage = () => {
 
@@ -36,9 +36,9 @@ const DetailsPage = () => {
 		catch {
 			setImg('https://via.placeholder.com/500')
 		}
-
 		setLoading(false);
 	}
+
 	useEffect(() => {
 		setPath('/event/id');
 		fetchData();
@@ -49,7 +49,8 @@ const DetailsPage = () => {
 			<h1 className='page-header'>Event</h1>
 			{loading ? <p className='page-sub-header'>Loading...</p> :
 				<>
-					{event === null ? <p className='page-sub-header'>Tyvärr så hittade vi inget om eventet!</p> :
+					{event === null ? <p className='page-sub-header'>Tyvärr så hittade vi inget om eventet!</p>
+						:
 						<>
 							<p className='page-sub-header'>You are about to score some tickets to</p>
 							<section className='event-information'>

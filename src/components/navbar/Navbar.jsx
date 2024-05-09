@@ -1,8 +1,8 @@
-import { faCalendarCheck, faCartShopping, faRug } from '@fortawesome/free-solid-svg-icons';
-import './navbar.css';
-import NavButton from '../navButton/NavButton';
 import { useEffect, useState } from 'react';
 import { useCartStore } from '../../store/cartStore';
+import { faCalendarCheck, faCartShopping, faRug } from '@fortawesome/free-solid-svg-icons';
+import NavButton from '../navButton/NavButton';
+import './navbar.css';
 
 const Navbar = () => {
     const cart = useCartStore((state) => state.cart);

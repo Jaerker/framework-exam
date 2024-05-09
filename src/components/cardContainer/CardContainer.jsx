@@ -1,5 +1,6 @@
 import Card from '../card/Card';
-import './card-container.css'
+import './card-container.css';
+
 const CardContainer = ({ list }) => {
     return (
         <section className='card-container'>
@@ -24,10 +25,7 @@ const CardContainer = ({ list }) => {
                 :
                 <>
                     <h2 className='container-message'>Vänta...</h2>
-
                 </>}
-
-
         </section>
     );
 }

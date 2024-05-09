@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { usePathStore } from '../../store/pathStore.js';
-import SearchBar from '../../components/searchBar/SearchBar';
 import agent from '../../api/agent';
+import SearchBar from '../../components/searchBar/SearchBar';
 import CardContainer from '../../components/cardContainer/CardContainer';
 
 const EventsPage = () => {

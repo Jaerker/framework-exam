@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import './card.css';
 import { Link } from 'react-router-dom';
 import { formatDay, formatShortMonth, formatTime } from '../../controller/dateController';
+import './card.css';
 
 const Card = ({ data }) => {
 
